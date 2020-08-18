@@ -1,0 +1,5 @@
+{
+  "development" : {"ssl": false},
+  "stage":  {"ssl": false},
+  "production":  {"ssl": true}
+}

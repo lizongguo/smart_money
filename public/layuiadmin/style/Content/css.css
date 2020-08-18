@@ -1,0 +1,14 @@
+h1{
+    background-color:deepskyblue;
+    padding-left:20px;
+    color:white;
+}
+.layui-layedit{
+    background-color: #fff;
+}
+.layui-layedit .layui-icon-close:before{
+    content:""
+}
+.layui-layedit .layui-icon-down:before{
+    content:""
+}

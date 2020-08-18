@@ -1,0 +1,23 @@
+{
+    "development": {
+        "host": "127.0.0.1",
+        "port": "3306",
+        "database": "ordering",
+        "user": "root",
+        "password": "12345678"
+    },
+    "stage": {  
+        "host": "127.0.0.1",
+        "port": "3306",
+        "database": "ordering",
+        "user": "root",
+        "password": "12345678"
+    },
+    "production": {
+        "host": "127.0.0.1",
+        "database": "ordering",
+        "port": "3306",
+        "user": "root",
+        "password": "12345678"
+    }
+}

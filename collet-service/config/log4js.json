@@ -1,0 +1,19 @@
+{
+    "appenders": [{
+            "type": "clustered",
+            "appenders": [
+                {
+                    "type": "console"
+                },
+                {
+                    "type": "dateFile",
+                    "filename": "logs/kanae_api.log",
+                    "pattern": "-yyyy-MM-dd",
+                    "alwaysIncludePattern": true,
+                    "pollInterval": 1
+                }
+            ]
+        }],
+    "replaceConsole": true,
+    "lineDebug": false
+}

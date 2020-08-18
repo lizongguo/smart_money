@@ -1,0 +1,11 @@
+<?php
+//站点设置
+return [
+    'sitename' => '',   //网站名称
+    'domain' => '',     //网站域名
+    'title' => '',      //首页标题
+    'keywords' => '',   //META关键词
+    'descript' => '',   //META描述
+    'copyright' => '',  //版权信息
+];
+

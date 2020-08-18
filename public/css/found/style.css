@@ -1,0 +1,382 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* { margin: 0; padding: 0; }
+html, body { height: 100%; margin:0 auto;font-family: gotham_bookregular, "Gotham Book", "GothamBook", "Helvetica Neue", Helvetica, Arial, sans-serif, "Hiragino Sans GB", "Microsoft YaHei"; font-size: 16px;-webkit-font-smoothing:antialiased;}
+li { list-style: none; }
+img { max-width: 100%;width:100%; }
+.clear{clear: both; width: 100%; height: 0px; font-size: 0; line-height: 0}
+a{text-decoration: none; color: #1c1c1c;}
+a:active{opacity:.6;}
+a,a:hover,a:active,a:visited,a:link,a:focus{-webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-tap-highlight-color: transparent;outline:none;background: none;text-decoration: none;}
+input{ outline:medium; -webkit-appearance: none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+input[type="button"], input[type="submit"], input[type="reset"] {-webkit-appearance: none;}
+input[type="button"]:active{opacity: .8}
+textarea {  -webkit-appearance: none;}   
+input[type=date] {  background-color:#fff;  color:#000; appearance:none;  /*下拉框去掉右侧图标*/  -moz-appearance:none;  -webkit-appearance:none;  } 
+
+input[type=number] {  -moz-appearance:textfield;}  
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {  -webkit-appearance: none;  margin: 0;  }  
+
+select {appearance:none;-moz-appearance:none;-webkit-appearance:none;}
+textarea::-webkit-input-placeholder {color: #ccc;}
+input::-webkit-input-placeholder {color: #ccc;}
+input[type="date"]:before{color: #ccc;content:attr(placeholder);}
+input[type="date"].full:before {content:""!important;}
+
+.main{ background: #f2f2f2;min-height: 100%;position: relative; font-size: 16px; box-sizing: border-box;}
+ @media (min-width: 1025px) {  
+html,body,.top_bar,.main,.login_main,.sub_tab,.website_btn_bar,.menu_tab,.searchFix{max-width: 480px;}	
+.navFix,.pop_bg{ max-width: 480px;}
+}
+/*--顶部栏--*/
+.main_menu{padding:0 0 2.3rem 0;background: #fcfcfc; position: relative; overflow: hidden; }
+.content_box{ padding:0  .4rem;}
+.banner {height:4.2rem ;}
+.swiper-pagination-bullet{}
+.swiper-pagination-bullet-active{background: #fff;}
+
+
+.main{ padding: 1.4rem 0 0 0;}
+.top_bar{ position: fixed; top: 0; z-index: 9999; width:100%; height:1.4rem; line-height: 1.4rem; padding:0 .4rem; background: #25468e;font-size: .6rem; color: #fff; box-sizing: border-box; }
+.top_bar a{color: #fff;}
+.top_bar_left{position: absolute;top:0px;left:.4rem;}
+.top_bar_left .icon-jiantou1{ font-size: .6rem;}
+.top_bar_title{width: 100%; text-align: center; color: #fff; }
+.top_bar_right{position: absolute;top:0px;right:.4rem;}
+.top_bar_right i.icon-liebiao{font-size: .7rem;}
+.my_menu{ position:fixed; background: #25468e; border-radius: .12rem; top:1.2rem; margin: 0 0 0 -4.2rem; width: 5rem;  display: none;  border: #133580 1px solid; overflow: hidden;}
+.my_menu h3{font-size: .54rem; line-height: 1.2rem;padding: 0 .3rem; color: #feb85e; }
+.my_menu ul li{ line-height: 1.2rem; padding: 0 .3rem;font-size: .48rem; border-top: #133580 1px solid; color: #feb85e; background: #25468e;}
+.my_menu ul li a{color: #fff;}
+
+
+/*登录*/
+.login_main{  min-height:18rem; height: 100%; padding: 3.6rem 0 0 0;background:#25468e url(../images/login_bg.png) no-repeat top center; background-size: 100% auto; box-sizing: border-box;}
+.login_title{width:9rem; margin: 0 auto;}
+.login_box{width: 10rem; margin: .6rem auto 0 auto; background: #fff; border-radius: .3rem; border: #25468e 1px solid;}
+.login_box ul{padding: .6rem;}
+.login_box ul li{ position: relative; height: 1.4rem; width: 100%; margin-bottom: .2rem;}
+.login_box ul li .login_input{font-size: .48rem; padding: .2rem 0;border:none; border-bottom: #eee 1px solid; width: 100%; text-indent: 1.5em;}
+.login_box ul li span{position: absolute; color: #dbdbdb; font-size:.5rem ; display: block; padding: .2rem 0;}
+.login_box ul li span i{font-size:.5rem ;}
+.login_btn{ border-radius: 1rem; padding:.3rem 0; color: #fff; font-size: .3rem; margin:.2rem 0 0 0;  background: #25468e; width: 100%; text-align: center; font-size: .5rem; border:none; font-weight: bold;}
+/*首页*/
+.my_profile_box{  color: #fff; padding: .4rem .4rem 1.4rem .4rem;  display: flex; align-items: center;background:#25468e url(../images/my_profile_bg.png) no-repeat center center; background-size: 100% auto;}
+.my_pfofile_info{display:flex; flex: 1;align-items: center;}
+.my_avatar{ width:1.68rem; height: 1.68rem; border-radius: 50%; border: #8799c1 3px solid; margin: 0 .2rem 0 0; overflow: hidden;}
+.my_avatar img{width:1.68rem; height: 1.68rem; border-radius: 50%; }
+.my_name h2{font-size:.54rem;}
+.my_name p{font-size:.4rem;}
+.my_inv_btn{border:#feb85e 1px solid;  border-radius: 1rem; padding:.1rem .3rem; color: #feb85e; font-size: .4rem; font-weight: bold;}
+.my_inv_btn i{font-size: .4rem; font-weight: normal;}
+
+.fund_list{ padding: .3rem;}
+.fund_list h3{ font-size: .48rem; color: #25468e; margin: 0 0 .3rem 0;}
+.fund_list h3 i{font-weight: normal; font-size: .6rem;}
+.fund_list ul a:active li{ background-color: #e8f4fd;}
+.fund_list ul li{border-radius: .12rem; background: #fff; padding: .24rem; display: flex;min-height: 3rem; margin: 0 0 .3rem 0; align-items: center;}
+.fund_list_img{width: 3rem; height: 3rem; border:#f4f4f4 1px solid; overflow: hidden; margin: 0 .2rem 0 0; box-sizing: border-box;}
+.fund_list_img img{}
+.fund_list_info{flex: 1;}
+.fund_list_info h4{font-size: .48rem;}
+.fund_list_info p{ font-size: .36rem; color: #888;overflow:hidden; text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; line-height:1.5em;}
+.fund_list_info span{border:#25468e 1px solid;  border-radius: 1rem; padding:.1rem .2rem; color: #25468e; font-size: .3rem; margin:.2rem 0 0 0; display: flex; float: right; align-items: center;}
+.fund_list_info span:active{ background: #25468e; color: #fff;}
+.fund_list_info span i{font-size: .2rem;}
+
+
+/*基金详情*/
+.fund_details_tab{  background: #fff; border-bottom: #eee 1px solid;}
+.fund_details_tab ul{ display: flex; justify-content: center;}
+.fund_details_tab ul li{ width: 30%;height: 1.3rem; line-height: 1.3rem;text-align: center; font-size: .48rem; color: #888; }
+.fund_details_tab ul li.active{border-bottom: #25468e 3px solid;}
+.fund_details_tab ul li.active p{ color: #25468e; font-weight:bold;}
+.sub_navFix{position:fixed; z-index: 1000;padding:0; bottom: 0; width: 100%; background: #fff;}
+
+
+
+
+.fund_details_list ul{padding: .3rem;}
+.fund_details_list ul a:active li{ background-color: #e8f4fd;}
+.fund_details_list ul li{border-radius: .12rem; background: #fff; padding: .24rem;margin: 0 0 .3rem 0; display: flex; align-items: center;}
+.fund_details_list ul li .fund_details_list_info{flex: 1;}
+.fund_details_list ul li h3{font-size: .4rem; margin-bottom: .1rem;}
+.fund_details_list ul li p{color: #888; font-size:.36rem;}
+.fund_details_list ul li span{ font-size: .3rem; background: #65b7f6; color: #fff; padding: .1rem .2rem; border-radius: .4rem; font-weight: bold; display:inline-block; }
+.fund_details_list_arrow i{color: #dddddd; font-size: .3rem;}
+
+
+
+
+.sub_tab{ padding:0; font-size: .44rem;  width: 100%; position: fixed; bottom: 0; background: #fff; border-top: #eee 1px solid;}
+.sub_tab ul{display: flex; justify-content: space-between; padding: .2rem .4rem; }
+.sub_tab ul li{ width: 17%; text-align: center;   font-size: .36rem; border-radius: .12rem; padding: .1rem 0;background: #fff;}
+.sub_tab ul li span{ width:.64rem; height: .64rem; display: flex; align-items: center; justify-content: center; margin: 0 auto .1rem auto; color:#ccc;  }
+.sub_tab ul li span i{font-size: .7rem;}
+.sub_tab ul li span i.icon-jianjie{font-size: .8rem;}
+.sub_tab ul li span i.icon-gongsi{font-size: .8rem;}
+.sub_tab ul li p{color: #666;}
+.sub_tab ul li.active{ color: #25468e;}
+.sub_tab ul li.active p{ color: #25468e; font-weight: bold;}
+.sub_tab ul li.active span i{ color: #25468e;}
+.sub_con{padding:.3rem;}
+.sub_con .sub_con_ul{display: none; }
+.sub_ul{ margin: 0 0 1.8rem 0;}
+
+.fund_about{padding: .3rem; background: #fff;  border-radius: .12rem; font-size: .44rem; line-height: 1.8em;}
+
+
+.fund_histroy {padding: .3rem; background: #fff;  border-radius: .12rem; font-size: .44rem; line-height: 1.8em;}
+.fund_histroy ul{display: block; border-left: #25468e 0.02rem solid; border-radius:0; padding: 0 0 0 .3rem;}
+.fund_histroy ul li{padding-bottom: .3rem;}
+.fund_histroy ul li h4{font-size: .44rem; color: #25468e;  position: relative; }
+.fund_histroy ul li h4::before{ content: ''; width: .3rem; height: .3rem; border-radius: 50%; font-size: 0; line-height: 0; position: absolute;top:.25rem; left: -0.45rem;background: #25468e;}
+.fund_histroy ul li p{font-size: .4rem; color: #666; line-height: 1.5em;}
+
+
+
+.team_list ul li{border-radius: .12rem; background: #fff; padding:.2rem; display: flex;margin: 0 0 .3rem 0; align-items: top; }
+.team_list_img{width: 2.56rem; height: 3.2rem; border:#f4f4f4 1px solid; overflow: hidden; margin: 0 .2rem 0 0; box-sizing: border-box;}
+.team_list_img img{}
+.team_list_info{flex: 1;}
+.team_list_info h4{font-size: .4rem;}
+.team_list_info p{ font-size: .36rem; color: #888;overflow:hidden; text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:4; line-height:1.5em;}
+.team_list_info p.all-txt{overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 9999;-webkit-box-orient: vertical;}
+
+
+.team_list_info span{border:#25468e 1px solid;  border-radius: 1rem; padding:0rem .2rem; color: #25468e; font-size: .3rem; margin:.2rem 0 0 0; display: flex; float: right; align-items: center;}
+.team_list_info span:active{ background: #25468e; color: #fff;}
+.team_list_info span i{font-size: .2rem;}
+a.more_button{ border:#25468e 1px solid;  border-radius: 1rem; padding:0rem .2rem; color: #25468e; font-size: .3rem; margin:.1rem 0 0 0; display: flex; float: right; align-items: center;}
+a.more_button em{font-size:.3rem; font-style: normal;}
+a.more_button i{-webkit-transform:rotate(-90deg); display:flex; font-size: .2rem; margin: 0 0 0 .1rem;}
+a.on i{-webkit-transform:rotate(90deg); display:flex; font-size: .2rem; margin: 0 0 0 .1rem;}
+
+
+a.win_button{ border:#d89136 1px solid;  border-radius: 1rem; padding:0rem .2rem; color: #d89136; font-size: .3rem; margin:.1rem .2rem 0 0; display: flex; float: right; align-items: center;}
+a.win_button em{font-size:.3rem; font-style: normal;}
+
+
+
+
+
+.fund_class ul{display: flex; flex-wrap: wrap; justify-content: space-between;}
+.fund_class ul li{ width: 32%; text-align: center; margin-bottom: .3rem; background: #fff; border-radius: .1rem; padding: .2rem 0;}
+.fund_class ul li span{display: flex; width: 1.8rem; height: 1.8rem; border-radius: 50%; align-items: center; justify-content: center; color: #fff; background: #25468e; margin: 0 auto .2rem auto; }
+.fund_class ul li span i{font-size: 1rem;}
+.fund_class ul li h4{font-size: .4rem;}
+.fund_class ul li p{font-size: .28rem; color: #888; line-height: 1.5em;}
+
+.fund_class ul li.fund_class_a span{ background: #65b7f6}
+.fund_class ul li.fund_class_b span{ background: #0843ef}
+.fund_class ul li.fund_class_c span{ background: #9a08d7}
+.fund_class ul li.fund_class_d span{ background: #06b17b}
+.fund_class ul li.fund_class_e span{ background: #4a5c95}
+.fund_class ul li.fund_class_f span{ background: #0885ef}
+
+
+
+.fund_details_about_top{background: #25468e; padding: .3rem;margin:0;  align-items: center;}
+.fund_details_about_top .fund_details_list_info{ background: #fff; border-radius: .12rem; padding: .3rem;}
+.fund_details_about_top h3{font-size: .4rem; margin-bottom: .1rem;}
+.fund_details_about_top p{color: #888; font-size:.36rem;}
+.fund_details_about_top span{ font-size: .3rem; background: #65b7f6; color: #fff; padding: .1rem .2rem; border-radius: .4rem; font-weight: bold; display:inline-block; }
+
+.fund_details_about_con_ul{ padding: .3rem;}
+.fund_details_about_box{background: #fff; padding: .3rem;border-radius: .12rem; font-size: .44rem; line-height: 1.5em;}
+
+.fund_num ul{display: flex; justify-content: space-between; margin:.4rem 0;}
+.fund_num ul li{background: #dd0000; padding:.8rem 0; border-radius: .12rem; color: #fff; width: 48%; text-align: center;}
+.fund_num ul li span{font-size: .6rem; font-weight: bold;}
+.fund_num ul li.num_box_b{ background: #d89136;}
+.fund_num ul li p{font-size: .3rem;}
+
+.inv_projects ul{}
+.inv_projects ul a:active li{ background-color: #e8f4fd;}
+.inv_projects ul li{border-radius: .12rem; background: #fff; padding:0 .2rem  .2rem .2rem; margin: 0 0 .3rem 0; align-items: top; }
+.inv_projects ul li h4{font-size: .44rem; border-bottom: #eee 1px solid; padding: .2rem 0;margin: 0 0 .1rem 0;}
+.inv_projects ul li h4 span{ float: right; font-size: .3rem; background: #dd0000; color: #fff; padding: .1rem .2rem; border-radius: .4rem; font-weight: bold; display:inline-block;}
+.inv_projects ul li h4 span.inv_over{background: #999;}
+.inv_projects ul li h4 span.inv_unlisted{background: #65b7f6;}
+.inv_projects ul li p{font-size: .4rem; color: #888; padding: .1rem 0;}
+.inv_projects ul li p strong{color: #25468e; margin: 0 .6rem 0 0;}
+
+
+
+.inv_projects_details_top{background: #25468e; padding: .3rem;margin:0;  align-items: center;}
+.inv_projects_details_top .inv_projects_details_info{ background: #fff; border-radius: .12rem; padding: .3rem;}
+.inv_projects_details_top h3{font-size: .4rem; margin-bottom: .1rem;}
+.inv_projects_details_top p{color: #888; font-size:.36rem;}
+.inv_projects_details_top span{ float: right; font-size: .3rem; background: #65b7f6; color: #fff; padding: .1rem .2rem; border-radius: .4rem; font-weight: bold; display:inline-block; }
+
+.inv_projects_details_con{ padding: .3rem;}
+.inv_projects_details_con h3{font-size: .48rem; color:#25468e; margin-bottom: .1rem;}
+.inv_projects_details_con_text{background: #fff; border-radius: .12rem; padding: .3rem; font-size: .44rem; line-height: 2em; margin: 0 0 1.6rem 0; }
+
+.website_btn_bar{position: fixed; bottom: 0; background-color:rgba(255,255,255,.9); padding: .2rem .3rem; width: 100%; margin: 0 0 0 -.3rem;  border-top: #ddd 1px solid;box-sizing: border-box;}
+a.website_btn{ background: #25468e;display: block;text-align:center; color: #fff;  padding: .4rem 0; font-size: .4rem; width: 70%;   box-sizing: border-box; margin:0 auto; border-radius: .8rem;}
+
+
+/*我的基金*/
+.my_fund_top{background: #25468e;padding: .3rem; }
+.my_fund_total{background: #d89136; padding: .3rem; color: #fff;border-radius: .12rem; margin-bottom: .3rem;}
+.my_fund_total h3{font-size: .4rem; width: 100%; text-align: center; margin-bottom:.3rem;}
+.my_fund_total h3 span{font-size: .8rem; text-align: center;}
+.my_fund_total ul{display: flex; flex-wrap: wrap;}
+.my_fund_total ul li{width: 50%; font-size: .36rem;}
+
+.my_fund_total_b{background: #cc0000; padding: .3rem; color: #fff;border-radius: .12rem;}
+.my_fund_total_b h3{font-size: .4rem; width: 100%; text-align: center; margin-bottom:.3rem;}
+.my_fund_total_b h3 span{font-size: .8rem; text-align: center;}
+
+.my_fund_list{padding: .3rem;}
+.my_fund_list h3{ color: #25468e; font-size: .48rem; padding:.2rem 0;}
+.my_fund_list ul a:active li{ background-color: #e8f4fd;}
+.my_fund_list ul li{background: #fff; border-radius: .12rem; padding: .2rem;color: #888; margin-bottom: .3rem;}
+.my_fund_list ul li h4{ font-size:.42rem; color: #000; border-bottom: #eee 1px solid;padding:0 0 .2rem 0;margin-bottom: .2rem;}
+.my_fund_list ul li h5{ font-size:.36rem; padding: .1rem 0; font-weight: normal; color: #888; display: flex;justify-content: space-between;}
+.my_fund_list ul li h5 span{}
+.my_fund_list ul li h5 b{color: #cc0000;}
+.my_fund_list ul li h5 span:nth-child(1) b{color: #d89136;}
+.my_fund_list ul li p{font-size:.32rem; width: 50%; display: inline-block;padding: .1rem 0;}
+.my_fund_list ul li p b{ color: #333;}
+.my_fund_list_info{display: flex; justify-content: space-between;}
+.my_fund_list_info_left{width: 90%; display: flex; flex-wrap: wrap; flex: 1;}
+.my_fund_list_arrow{color: #eee; font-size: .3rem; align-items: center; display: flex;}
+
+.my_fund_sub_top{background: #25468e;padding: .3rem;}
+.my_fund_sub_top_info{background: #25468e; padding: .3rem;margin:0;  align-items: center;}
+.my_fund_sub_top_info { border-radius: .12rem; padding: .3rem;}
+.my_fund_sub_top_info h3{font-size: .4rem; margin-bottom: .1rem; color: #fff;}
+.my_fund_sub_top_info p{color: #65b7f6; font-size:.36rem;}
+.my_fund_sub_top_info span{ font-size: .3rem; background: #fff; color: #25468e; padding: .1rem .2rem; border-radius: .4rem; font-weight: bold; display:inline-block; }
+.my_fund_sub_total{background: #fff; padding: .2rem;margin:0;  border-radius: .12rem;}
+.my_fund_sub_total h3{display: flex; color: #888; font-size: .3rem; border-bottom: #eee 1px solid; padding: 0 0 .2rem 0;}
+.my_fund_sub_total h3 span{width: 50%;}
+.my_fund_sub_total h3 span:nth-child(1) b{color: #2089f5;}
+.my_fund_sub_total h3 span b{font-size: .6rem; color: #dc0a0a;}
+.my_fund_sub_total ul {display: flex; flex-wrap: wrap;}
+.my_fund_sub_total ul li{width: 50%; font-size: .36rem; color: #888; padding: .1rem 0;}
+.my_fund_sub_total ul li b{color: #ff6600;}
+
+.my_fund_sub_tab ul{ display: flex; color: #fff; padding: .3rem 0 0 0; flex-wrap: wrap;}
+.my_fund_sub_tab ul li{ width: 25%; text-align: center; margin: .1rem 0;}
+.my_fund_sub_tab ul li a{color: #fff; font-size: .36rem;border:#315298 1px solid; display: block;border-radius: .12rem; width:90%; margin: 0 auto;padding: .1rem 0; }
+.my_fund_sub_tab ul li.active a{color: #ffff; font-weight: bold;background: #0f8cec;border:#0f8cec 1px solid; }
+
+
+.my_inv_projects_list{ padding: .3rem;}
+.my_inv_projects_list h3{color: #25468e; font-size: .48rem; padding:.2rem 0;}
+.my_inv_projects_list ul a:active li{ background-color: #e8f4fd;}
+.my_inv_projects_list ul li{border-radius: .12rem; background: #fff; padding:0 .2rem  .2rem .2rem; margin: 0 0 .3rem 0; align-items: top; }
+.my_inv_projects_list ul li h4{font-size: .42rem; border-bottom: #eee 1px solid; padding: .2rem 0;margin: 0 0 .1rem 0;}
+.my_inv_projects_list ul li h4 span{ float: right; font-size: .3rem; background: #dd0000; color: #fff; padding: .1rem .2rem; border-radius: .4rem; font-weight: bold; display:inline-block;}
+.my_inv_projects_list ul li h4 span.inv_over{background: #999;}
+.my_inv_projects_list ul li h4 span.inv_unlisted{background: #65b7f6;}
+.my_inv_projects_list ul li h5{font-size: .36rem; color: #888; padding: .1rem 0; display: flex; font-weight: normal;border-bottom: #eee 1px solid;}
+.my_inv_projects_list ul li h5 span{width: 33.333%; text-align: center;}
+.my_inv_projects_list ul li h5 b{color: #333; margin: 0 .6rem 0 0; display: block;text-align: center; width: 100%;height: .4rem; line-height: .4rem;}
+.my_inv_projects_list ul li h5.my_fund_num b {color: #bb0000;}
+
+
+.my_fund_num{font-size: .36rem; color: #888; display: flex; padding: .1rem 0;}
+.my_fund_num span{width: 50%;}
+.my_fund_num span b{color: #000;}
+
+.my_inv_projects_list_btn{display: flex;justify-content: space-between; padding: .3rem 0 0 0; }
+.my_inv_projects_list_btn a i{font-size: .48rem; color: #fff;}
+.my_inv_projects_list_btn a:nth-child(1) i{font-size: .5rem; }
+.my_inv_projects_list_btn a:nth-child(2) i{font-size: .44rem; }
+.my_inv_projects_list_btn a:nth-child(3) i{}
+.my_inv_projects_list_btn a{display: flex; align-items: center; justify-content: center; width: 30%; border: #25468e 1px solid;color: #fff;background: #25468e; border-radius: .6rem;text-align: center; font-size: .36rem; padding: .1rem 0;}
+
+
+.my_financial_statements_list{ padding: .3rem;}
+.my_financial_statements_list h3{color: #25468e; font-size: .48rem; padding:.2rem 0;}
+.my_financial_statements_list ul li{border-radius: .12rem; background: #fff; padding:.3rem; margin: 0 0 .3rem 0; align-items: center; display: flex; }
+.my_financial_statements_list ul li  h4{flex: 1; font-size: .4rem;font-weight: normal;}
+.my_financial_statements_list ul li span{color: #999; display: flex; align-items: center; justify-content: center;}
+.my_financial_statements_list ul li span i{font-size: .3rem;}
+
+
+.my_investment_details{padding: .3rem;}
+.my_investment_details ul{border-radius: .12rem; background: #fff; padding:0rem; margin: 0 0 .3rem 0; overflow: hidden;}
+.my_investment_details_table{ font-size: .32rem; width: 100%; border-collapse: collapse;}
+.my_investment_details_table th{text-align: center; background: #dceefc; color: #8eaac6; padding: .2rem 0;}
+.my_investment_details_table td{text-align: center; padding: .3rem 0; border-bottom: #eee 1px solid; }
+.my_investment_details_total{text-align: right; color: #888; font-size: .3rem; padding: .3rem;}
+.my_investment_details_total b{font-size: .48rem; color: #bb0000;}
+
+.my_fund_diagram{ padding:.3rem;}
+.my_fund_diagram h3{color: #25468e; font-size: .48rem; padding:.2rem 0;}
+.my_fund_diagram_con{border-radius: .12rem; background: #fff;padding:.3rem;}
+.fund_pic{border-radius: .12rem; background: #fff;padding:.3rem;}
+
+
+.pop_bg{width: 100%; height: 100%; position: fixed; background-color: rgba(0,0,0,.8); top: 0; z-index: 99999; align-items: center; display: flex; justify-content: center;}
+.pop_box{width: 80%;  background: #fff; border-radius: .12rem; padding: .3rem; text-align: center; margin: 0 auto; min-height: 3rem; display: flex; align-items: center; justify-content: center; font-size: .44rem;}
+.pop_box strong{color: #dd0000;font-weight: normal;}
+
+.no_limits_text{border-radius: .12rem; background: #f9f9f9; padding:2rem .3rem; margin: 0 0 .3rem 0; align-items: center; display: flex; justify-content: center; color: #666; font-size: .4rem;}
+
+a.confirm_btn{ padding: .2rem 1rem; color: #fff; background: #25468e; border-radius: 1rem; margin:.2rem auto; display: inline-block; font-size: .44rem; font-weight: bold;}
+.pswp{z-index: 9999!important;}
+
+.preview_iframe{width: 100%; height: 93vh; border: none;}
+
+a.download_btn{ width: 1.5rem; height: 1.5rem; border-radius: 50%; display:block;   background: #25468e; position: fixed; bottom: .2rem; flex-wrap: wrap; justify-content: center; color: #fff; margin: 0 0 0 9rem;}
+a.download_btn span{width: 100%; text-align: center; display: block; margin: .1rem 0 0 0;}
+a.download_btn img{width: .8rem; display: block; margin: 0 auto;}
+a.download_btn p{font-size: .3rem; display: block; height: .4rem; text-align: center;}
+
+
+.menu_tab{ padding:0; font-size: .44rem;  width: 100%; position: fixed; bottom: 0; background: #fff; border-top: #eee 1px solid;}
+.menu_tab ul{display: flex; justify-content: space-between; padding: .2rem .4rem; }
+.menu_tab ul li{ width: 17%; text-align: center;   font-size: .36rem; border-radius: .12rem; padding: .1rem 0;background: #fff;}
+.menu_tab ul li span{ width:.64rem; height: .64rem; display: flex; align-items: center; justify-content: center; margin: 0 auto .1rem auto; color:#666;  }
+.menu_tab ul li span i{font-size: .7rem;}
+.menu_tab ul li span i.icon-zhengcezhinanzhen{font-size: .68rem;}
+.menu_tab ul li span i.icon-shuiwu{font-size: .8rem;}
+.menu_tab ul li p{color: #666;}
+.menu_tab ul li.active{ color: #25468e;}
+.menu_tab ul li.active p{ color: #25468e; font-weight: bold;}
+.menu_tab ul li.active span i{ color: #25468e;}
+
+button:focus{outline:0;}
+.search_box{ background: #fff; padding: .2rem .3rem; display: flex; align-items: center; justify-content: space-between; position: relative; border-bottom: #eee 1px solid;}
+.search_input{ background: #f2f2f2; border-radius: .6rem; padding: .3rem .2rem; flex: 1; border: none;font-size: .44rem;}
+.search_btn{ position: absolute; right: .4rem; font-size: .4rem; width:.95rem; height: .95rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #25468e; color: #fff; border: none; outline: none;}
+.search_btn i{font-size: .5rem;}
+.navFix{position:fixed; z-index: 1002;top: 1.4rem; padding: 0; width: 100%; background-color:rgba(255,255,255,.9); }
+.searchFix{position:fixed; z-index: 1002;top: 1.4rem; width: 100%; background-color:rgba(255,255,255,.9); box-sizing: border-box;}
+
+
+
+.list_main{ padding: .3rem .3rem 1.8rem .3rem;}
+.list_main h3{color: #25468e; font-size: .48rem; padding:.2rem 0;}
+.list_main ul li{border-radius: .12rem; background: #fff; padding:.3rem; margin: 0 0 .3rem 0; align-items: center; display: flex; }
+.list_main ul li  h4{flex: 1; font-size: .4rem;font-weight: normal;}
+.list_main ul li span{color: #999; display: flex; align-items: center; justify-content: center;}
+.list_main ul li span i{font-size: .3rem;}
+
+
+.view_main{ background: #fff; padding: .4rem; min-height:90vh;}
+.view_main h1{font-size: .6rem; font-weight: normal; padding: .2rem 0; border-bottom: #eee 1px solid; line-height: 1.2em;}
+.view_content{font-size: .44rem; line-height:2em; padding: .3rem 0;}
+
+
+.tools_main{  padding: .3rem;}
+.tools_main ul{padding: .6rem 0rem;  background: #fff; border-radius: .12rem; display: flex; flex-wrap: wrap; }
+.tools_main ul li{width: 33.3333%;  margin-bottom:.3rem ;}
+.tools_main ul li span{display: block; width: 1.68rem; height: 1.68rem; display:flex; align-items: center; justify-content: center; border-radius: 2rem; color: #fff; font-size: .64rem; background: #25468e; margin: 0 auto .1rem auto;}
+.tools_main ul li span i{font-size: .72rem;}
+.tools_main ul li p{font-size:.34rem; display: block; width: 100%; text-align: center; color: #333; }
+.tools_main ul li.geshui_item span{background: #0aa1cc;}
+.tools_main ul li.waihui_item span{background: #d89136;}
+.tools_main ul li.waihui_item span i,.tools_main ul li.stock_item span i{font-size: .8rem;}
+.tools_main ul li.stock_item span{background: #dd0000;}
+
+
+

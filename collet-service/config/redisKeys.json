@@ -1,0 +1,12 @@
+{
+    "USER_CLIENT_ID_HASH": "user_client_queue:h",
+    "USER_CLIENT_ID_HASH_KEY": "client_%s",
+    "USER_PROFILE_HASH": "{u:%s}pro:h",
+    "DESK_INFO_HASH": "{g:%s}inf:h",
+    "DESK_MEMBERS_KEY": "{tg:%s}tgm:k",
+    "DESKS_INFO_HASH": "{g:%s}inf:h",
+    "DESKS_ONLINE_USER_HASH": "{g:%s}online:h",
+    "DESKS_ONLINE_USER_KEY": "u:%s",
+    "SPECS_CATEGORY_HASH": "specs_category:h",
+    "DESKS_GOODS_HASH": "{d:%s}gm:h"
+}
