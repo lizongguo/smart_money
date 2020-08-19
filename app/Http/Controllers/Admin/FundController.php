@@ -9,50 +9,39 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Models\Found;
+use App\Models\Fund;
 use App\Imports\TestImport;
 use App\Exports\TatentExport;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserFound;
-use Excel;
 use DB;
 
-use App\Libraries\BravePHPExcel;
-
-class FoundController extends BaseController
+class FundController extends BaseController
 {
-    public function __construct(Request $request, Found $model, UserFound $userFound) {
+    public function __construct(Request $request, Fund $model) {
         parent::__construct();
         $this->model = $model;
         $this->userFound = $userFound;
     }
     
-    /**
-     * 扩展对数据查询接口处理
-     * @param type $data
-     * @param type $msg
-     * @return type
-     */
-    
-    protected function parseSearch($data) {
-        $sh = $data;
-        if (!empty($data['goods_name'])) {
-            $sh['goods_name'] = ['conn' => 'lk', 'value' => $data['goods_name']];
-        }
-        return $sh;
-    }
-
     function items(Request $request) {
         $limit = $request->input('limit', 10);
         $sh = $request->input('sh', []);
-        $obj = $this->model->select('found.*');
-        $obj->where('found.deleted', 0);
-        if ($sh['current_name']) {
-            $obj->where('current_name', 'like', '%'.$sh['current_name'].'%');
+        $obj = $this->model->select('fund.*');
+        $obj->where('fund.deleted', 0);
+        if ($sh['name']) {
+            $obj->where('name', 'like', '%'.$sh['name'].'%');
         }
         $data = $obj->limit($limit)->get()->toArray();
+        $fund_type = config('code.fund_type');
         foreach ($data as $k => &$v) {
-            $v['total_val'] = $this->getFoundVal($v['found_no']);
+            $v['fund_type'] = $fund_type[$v['type']];
+            if (!$v['code']) {
+                $v['code'] = '暂无';
+            }
+            if (!$v['ranking']) {
+                $v['ranking'] = '暂无';
+            }
         }
         return response()->json([
             'code' => 0,
@@ -95,13 +84,10 @@ class FoundController extends BaseController
 
     protected function validatorItem($data, &$msg) {
         $valid = [
-            'current_name' => "required",
-            'total_value_cn' => 'required|numeric',
+            'name' => "required",
         ];
         $tips = [
-            'current_name.required' => '基金名称不能为空',
-            'total_value_cn.required' => '基金总额不能为空',
-            'total_value_cn.numeric' => '请输入正确的金额',
+            'name.required' => '基金名称不能为空',
         ];
         $validator = \Validator::make($data, $valid, $tips);
         if ($validator->fails()) {
@@ -133,7 +119,8 @@ class FoundController extends BaseController
                     'msg' => $msg
                 ]);
             }
-            $result = $this->model->saveFoundData($data);
+            $data['ranking'] = (int)$data['ranking'];
+            $result = $this->model->saveItem($data);
             if($result === false) {
                 return response()->json([
                     'status' => 500,
@@ -166,26 +153,4 @@ class FoundController extends BaseController
             'data' => $items,
         ]);
     }
-
-    function insert(Request $request) {
-        //基金信息
-        /*$filePath = base_path('storage/data/found.xlsx');
-        $array = Excel::toArray(new TestImport, $filePath);
-        $this->model->saveFound($array[0]);*/
-        //用户信息
-        /*$filePath = base_path('storage/data/user_info.xlsx');
-        $array = Excel::toArray(new TestImport, $filePath);
-        $this->model->saveUser($array[0]);*/
-        //基金项目信息
-        /*$filePath = base_path('storage/data/found_project.xlsx');
-        $array = Excel::toArray(new TestImport, $filePath);
-        $this->model->saveFroject($array[0]);*/
-        //用户基金信息
-        /*$filePath = base_path('storage/data/user_found.xlsx');
-        $array = Excel::toArray(new TestImport, $filePath);
-        $this->model->saveUserFound($array[0]);*/
-       
-        return Excel::download(new TatentExport($row,$list, 2020), date('Y:m:d ') . 'test.xlsx');
-    }
-
 }

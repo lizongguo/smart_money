@@ -54,9 +54,8 @@ Route::get('/admins/delete/{id}', ['as'=>'admins.delete', 'uses'=>'Admin\AdminsC
  */
 Route::get('/fund', ['as'=>'fund.index', 'uses'=>'Admin\FundController@index']);
 Route::get('/fund/items', ['as'=>'fund.items', 'uses'=>'Admin\FundController@items']);
-Route::get('/fund/project', ['as'=>'fund.project', 'uses'=>'Admin\FundController@project']);
 Route::match(['post','get'], '/fund/input/{id?}',['as'=>'fund.input', 'uses'=>'Admin\FundController@input']);
-
+Route::get('/fund/delete/{id}', ['as'=>'fund.delete', 'uses'=>'Admin\FundController@deleted']);
 
 /**
  * 菜单管理
