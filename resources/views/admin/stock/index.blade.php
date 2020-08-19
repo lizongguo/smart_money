@@ -5,9 +5,15 @@
         <div class="layui-form layui-card-header layuiadmin-card-header-auto">
             <div class="layui-form-item">
                 <div class="layui-inline">
-                    <label class="layui-form-label">基金名称</label>
+                    <label class="layui-form-label">股票名称</label>
                     <div class="layui-input-block">
                         <input type="text" name="sh[name]" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">股票代码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="sh[code]" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-inline">
@@ -22,7 +28,6 @@
                 <button class="layui-btn layuiadmin-btn-admin" data-type="batchdel">删除</button>
                 <button class="layui-btn layuiadmin-btn-admin" data-type="add">添加</button>
             </div>
-
             <table id="LAY-admin-manage" lay-filter="LAY-admin-manage"></table>
             <script type="text/html" id="roleNameTpl">
                 @{{ d.roles.name }}
@@ -53,14 +58,12 @@
         //用户管理
         table.render({
             elem: '#LAY-admin-manage'
-            , url: '{{route("fund.items")}}' //模拟接口
+            , url: '{{route("stock.items")}}' //模拟接口
             , cols: [[
                     {type: 'checkbox', fixed: 'left',width:'5%'}
-                    , {field: 'id', width: '10%', title: '序号'}
-                    , {field: 'name', width:'35%', title: '基金名称'}
-                    , {field: 'code',width:'10%', title: '基金代码'}
-                    , {field: 'ranking',width:'10%', title: '排名'}
-                    , {field: 'fund_type',width:'15%', title: '类型'}
+                    , {field: 'id', width: '20%', title: '序号'}
+                    , {field: 'name', width:'30%', title: '股票名称'}
+                    , {field: 'code',width:'30%', title: '股票代码'}
                     , {title: '操作', width: '15%', align: 'center', fixed: 'right', toolbar: '#table-admin-opation'}
                 ]]
             , page: true
@@ -80,8 +83,8 @@
                 }
             }
         });
-        var deleteUri = "{{route('fund.delete', ['id' => '_id'])}}";
-        var editUri = "{{route('fund.input', ['id' => '_id'])}}";
+        var deleteUri = "{{route('stock.delete', ['id' => '_id'])}}";
+        var editUri = "{{route('stock.input', ['id' => '_id'])}}";
 
         //排序功能
         table.on('sort(LAY-admin-manage)', function (obj) {
@@ -102,10 +105,10 @@
         });
         //编辑添加功能
         function editData(id) {
-            var title = '添加基金';
+            var title = '添加股票';
             if (typeof id !== 'undefined') {
                 var uri = editUri.replace('_id', id);
-                title = '编辑基金';
+                title = '编辑股票';
             } else {
                 var uri = editUri.replace('/_id', '');
             }

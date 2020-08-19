@@ -57,6 +57,15 @@ Route::get('/fund/items', ['as'=>'fund.items', 'uses'=>'Admin\FundController@ite
 Route::match(['post','get'], '/fund/input/{id?}',['as'=>'fund.input', 'uses'=>'Admin\FundController@input']);
 Route::get('/fund/delete/{id}', ['as'=>'fund.delete', 'uses'=>'Admin\FundController@deleted']);
 
+
+/**
+ * 股票管理
+ */
+Route::get('/stock', ['as'=>'stock.index', 'uses'=>'Admin\StockController@index']);
+Route::get('/stock/items', ['as'=>'stock.items', 'uses'=>'Admin\StockController@items']);
+Route::match(['post','get'], '/stock/input/{id?}',['as'=>'stock.input', 'uses'=>'Admin\StockController@input']);
+Route::get('/stock/delete/{id}', ['as'=>'stock.delete', 'uses'=>'Admin\StockController@deleted']);
+
 /**
  * 菜单管理
  */

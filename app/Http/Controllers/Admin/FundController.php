@@ -27,12 +27,15 @@ class FundController extends BaseController
     function items(Request $request) {
         $limit = $request->input('limit', 10);
         $sh = $request->input('sh', []);
+        $page = $request->input('page', 1);
+        $offset = ($page-1)*$limit;
         $obj = $this->model->select('fund.*');
         $obj->where('fund.deleted', 0);
         if ($sh['name']) {
             $obj->where('name', 'like', '%'.$sh['name'].'%');
         }
-        $data = $obj->limit($limit)->get()->toArray();
+        $total = count($obj->get());
+        $data = $obj->offset($offset)->limit($limit)->get()->toArray();
         $fund_type = config('code.fund_type');
         foreach ($data as $k => &$v) {
             $v['fund_type'] = $fund_type[$v['type']];
@@ -46,7 +49,7 @@ class FundController extends BaseController
         return response()->json([
             'code' => 0,
             'msg' => '',
-            'count' => count($data),
+            'count' => $total,
             'data' => $data,
         ]);
     }
@@ -84,10 +87,11 @@ class FundController extends BaseController
 
     protected function validatorItem($data, &$msg) {
         $valid = [
-            'name' => "required",
+            'name' => "required|unique:fund,name,{$data['id']},id",
         ];
         $tips = [
             'name.required' => '基金名称不能为空',
+            'name.unique' => '基金已经存在，请勿重复添加',
         ];
         $validator = \Validator::make($data, $valid, $tips);
         if ($validator->fails()) {
