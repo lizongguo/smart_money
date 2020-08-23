@@ -87,4 +87,35 @@ class AnalysisController extends BaseController
         }
         return view('admin.' . $this->viewName . '.input', ['data' => $data]);
     }
+
+    public function stock()
+    {
+        return view('admin.' . $this->viewName . '.stock');
+    }
+
+    function stockitems(Request $request) {
+        $model = new \App\Models\StockStatis();
+        $limit = $request->input('limit', 10);
+        $sh = $request->input('sh', []);
+        $page = $request->input('page', 1);
+        $offset = ($page-1)*$limit;
+        $obj = $model->select('stock_statis.*', 'stock.name as stock_name');
+        $obj->join('stock', 'stock.id', 'stock_statis.stock_id');
+        $obj->where('stock_statis.deleted', 0);
+        if ($sh['stock_name']) {
+            $obj->where('stock.name', 'like', '%'.$sh['stock_name'].'%');
+        }
+        $total = count($obj->get());
+        $data = $obj->offset($offset)->limit($limit)->get()->toArray();
+        foreach ($data as $k => &$v) {
+            $detail = json_decode($v['detail'], true);
+            $v['detail_str'] = implode("<br>", $detail);
+        }
+        return response()->json([
+            'code' => 0,
+            'msg' => '',
+            'count' => $total,
+            'data' => $data,
+        ]);
+    }
 }

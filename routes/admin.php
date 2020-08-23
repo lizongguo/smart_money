@@ -74,6 +74,8 @@ Route::get('/analysis/items', ['as'=>'analysis.items', 'uses'=>'Admin\AnalysisCo
 Route::match(['post','get'], '/analysis/input/{id?}',['as'=>'analysis.input', 'uses'=>'Admin\AnalysisController@input']);
 Route::get('/analysis/delete/{id}', ['as'=>'analysis.delete', 'uses'=>'Admin\AnalysisController@deleted']);
 
+Route::get('/analysis/stock', ['as'=>'analysis.stock', 'uses'=>'Admin\AnalysisController@stock']);
+Route::get('/analysis/stockitems', ['as'=>'analysis.stockitems', 'uses'=>'Admin\AnalysisController@stockitems']);
 /**
  * 菜单管理
  */
