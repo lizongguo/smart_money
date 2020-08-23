@@ -1,5 +1,4 @@
 vendor
-.env
 storage
 public/upload
 bootstrap/cache
