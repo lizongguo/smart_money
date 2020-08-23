@@ -67,6 +67,14 @@ Route::match(['post','get'], '/stock/input/{id?}',['as'=>'stock.input', 'uses'=>
 Route::get('/stock/delete/{id}', ['as'=>'stock.delete', 'uses'=>'Admin\StockController@deleted']);
 
 /**
+ * 统计分析
+ */
+Route::get('/analysis', ['as'=>'analysis.index', 'uses'=>'Admin\AnalysisController@index']);
+Route::get('/analysis/items', ['as'=>'analysis.items', 'uses'=>'Admin\AnalysisController@items']);
+Route::match(['post','get'], '/analysis/input/{id?}',['as'=>'analysis.input', 'uses'=>'Admin\AnalysisController@input']);
+Route::get('/analysis/delete/{id}', ['as'=>'analysis.delete', 'uses'=>'Admin\AnalysisController@deleted']);
+
+/**
  * 菜单管理
  */
 Route::get('/menu', ['as'=>'menu.index', 'uses'=>'Admin\MenuController@index']);
