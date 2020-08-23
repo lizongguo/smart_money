@@ -49,9 +49,9 @@
             , url: '{{route("analysis.stockitems")}}' //模拟接口
             , cols: [[
                     {field: 'id', width: '10%', title: '序号'}
-                    , {field: 'stock_name',width:'20%', title: '股票名称', sort: true}
-                    , {field: 'hold_num',width:'15%', title: '持股基金数'}
-                    , {field: 'detail_str',width:'55%', title: '持股详细'}
+                    , {field: 'stock_name',width:'20%', title: '股票名称'}
+                    , {field: 'hold_num',width:'15%', title: '持股基金数',sort: true}
+                    , {field: 'detail_str',width:'55%', title: '持股详细(基金名称：排名：持股大概成本)'}
                 ]]
             , page: true
             , limit: 30

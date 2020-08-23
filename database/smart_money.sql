@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 18/08/2020 16:19:48
+ Date: 23/08/2020 14:50:43
 */
 
 SET NAMES utf8mb4;
@@ -208,11 +208,61 @@ CREATE TABLE `fund`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `code` varchar(155) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `desc` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '备注信息',
+  `ranking` int(5) NULL DEFAULT 0 COMMENT '排名',
+  `type` tinyint(1) NULL DEFAULT 0 COMMENT '类型',
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '删除标记',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 45 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of fund
+-- ----------------------------
+INSERT INTO `fund` VALUES (1, '全国社保基金一一七组合', '', '', 0, 3, '2020-08-18 17:23:11', '2020-08-18 18:26:30', 0);
+INSERT INTO `fund` VALUES (2, '全国社保基金一零八组合', '', '', 0, 3, '2020-08-18 18:59:00', '2020-08-18 18:59:00', 0);
+INSERT INTO `fund` VALUES (3, '全国社保基金五零三组合', '', '', 0, 3, '2020-08-19 15:05:34', '2020-08-19 15:05:34', 0);
+INSERT INTO `fund` VALUES (4, '全国社保基金四一四组合', '', '', 0, 3, '2020-08-19 15:05:50', '2020-08-19 15:05:50', 0);
+INSERT INTO `fund` VALUES (5, '全国社保基金一一六组合', '', '', 0, 3, '2020-08-19 15:07:59', '2020-08-19 15:07:59', 0);
+INSERT INTO `fund` VALUES (6, '全国社保基金一一五组合', '', '', 0, 3, '2020-08-19 15:08:20', '2020-08-19 15:08:20', 0);
+INSERT INTO `fund` VALUES (7, '全国社保基金一一一组合', '', '', 0, 3, '2020-08-19 15:08:35', '2020-08-19 15:08:35', 0);
+INSERT INTO `fund` VALUES (8, '全国社保基金一零一组合', '', '', 0, 3, '2020-08-19 15:08:57', '2020-08-19 15:08:57', 0);
+INSERT INTO `fund` VALUES (9, '博时基金管理有限公司-社保基金四一九组合', '', '', 0, 3, '2020-08-19 15:09:25', '2020-08-19 15:09:25', 0);
+INSERT INTO `fund` VALUES (10, '全国社保基金六零三组合', '', '', 0, 3, '2020-08-19 15:10:00', '2020-08-19 15:10:00', 0);
+INSERT INTO `fund` VALUES (11, '全国社保基金一一零组合', '', '', 0, 3, '2020-08-19 15:10:21', '2020-08-19 15:10:21', 0);
+INSERT INTO `fund` VALUES (12, '全国社保基金一零五组合', '', '', 0, 3, '2020-08-19 15:10:38', '2020-08-19 15:10:38', 0);
+INSERT INTO `fund` VALUES (13, '全国社保基金六零一组合', '', '', 0, 3, '2020-08-19 15:16:15', '2020-08-19 15:16:15', 0);
+INSERT INTO `fund` VALUES (14, '全国社保基金四零六组合', '', '', 0, 3, '2020-08-19 15:16:37', '2020-08-19 15:16:37', 0);
+INSERT INTO `fund` VALUES (15, '全国社保基金一零九组合', '', '', 0, 3, '2020-08-19 15:17:01', '2020-08-19 15:17:01', 0);
+INSERT INTO `fund` VALUES (16, '广发基金管理有限公司-社保基金四二零组合', '', '', 0, 3, '2020-08-19 15:17:43', '2020-08-19 15:17:43', 0);
+INSERT INTO `fund` VALUES (17, '国泰基金管理有限公司-社保基金四二一组合', '', '', 0, 3, '2020-08-19 15:17:53', '2020-08-19 15:17:53', 0);
+INSERT INTO `fund` VALUES (18, '全国社保基金五零二组合', '', '', 0, 3, '2020-08-19 15:18:34', '2020-08-19 15:18:34', 0);
+INSERT INTO `fund` VALUES (19, '全国社保基金一零三组合', '', '', 0, 3, '2020-08-19 15:18:45', '2020-08-19 15:18:45', 0);
+INSERT INTO `fund` VALUES (20, '全国社保基金五零四组合', '', '', 0, 3, '2020-08-19 15:24:09', '2020-08-19 15:24:09', 0);
+INSERT INTO `fund` VALUES (21, '全国社保基金一零六组合', '', '', 0, 3, '2020-08-19 15:25:47', '2020-08-19 15:25:47', 0);
+INSERT INTO `fund` VALUES (22, '全国社保基金一一三组合', '', '', 0, 3, '2020-08-19 15:26:20', '2020-08-19 15:26:20', 0);
+INSERT INTO `fund` VALUES (23, '博时基金管理有限公司-社保基金16011组合', '', '', 0, 3, '2020-08-19 15:26:46', '2020-08-19 15:26:46', 0);
+INSERT INTO `fund` VALUES (24, '全国社保基金五零一组合', '', '', 0, 3, '2020-08-19 15:26:56', '2020-08-19 15:26:56', 0);
+INSERT INTO `fund` VALUES (25, '中信证券股份有限公司-社保基金1106组合', '', '', 0, 3, '2020-08-19 15:27:30', '2020-08-19 15:27:30', 0);
+INSERT INTO `fund` VALUES (26, '全国社保基金四一八组合', '', '', 0, 3, '2020-08-19 15:27:42', '2020-08-19 15:27:42', 0);
+INSERT INTO `fund` VALUES (27, '全国社保基金一一四组合', '', '', 0, 3, '2020-08-19 15:27:53', '2020-08-19 15:27:53', 0);
+INSERT INTO `fund` VALUES (28, '国泰基金管理有限公司-社保基金1102组合', '', '', 0, 3, '2020-08-19 15:34:50', '2020-08-19 15:34:50', 0);
+INSERT INTO `fund` VALUES (29, '全国社保基金六零二组合', '', '', 0, 3, '2020-08-19 15:35:15', '2020-08-19 15:35:15', 0);
+INSERT INTO `fund` VALUES (30, '全国社保基金四一三组合', '', '', 0, 3, '2020-08-19 15:40:51', '2020-08-19 15:40:51', 0);
+INSERT INTO `fund` VALUES (31, '全国社保基金一一二组合', '', '', 0, 3, '2020-08-19 15:41:15', '2020-08-19 15:41:15', 0);
+INSERT INTO `fund` VALUES (32, '汇添富基金管理股份有限公司-社保基金四二三组合', '', '', 0, 3, '2020-08-19 15:42:37', '2020-08-19 15:42:37', 0);
+INSERT INTO `fund` VALUES (33, '全国社保基金一零二组合', '', '', 0, 3, '2020-08-19 15:43:12', '2020-08-19 15:43:12', 0);
+INSERT INTO `fund` VALUES (34, '汇添富基金管理股份有限公司-社保基金1103组合', '', '', 0, 3, '2020-08-19 15:44:24', '2020-08-19 15:44:24', 0);
+INSERT INTO `fund` VALUES (35, '全国社保基金一零四组合', '', '', 0, 3, '2020-08-19 15:45:03', '2020-08-19 15:45:03', 0);
+INSERT INTO `fund` VALUES (36, '全国社保基金一零七组合', '', '', 0, 3, '2020-08-19 15:45:30', '2020-08-19 15:45:30', 0);
+INSERT INTO `fund` VALUES (37, '全国社保基金一一八组合', '', '', 0, 3, '2020-08-19 15:48:01', '2020-08-19 15:48:01', 0);
+INSERT INTO `fund` VALUES (38, '全国社保基金六零四组合', '', '', 0, 3, '2020-08-19 15:50:00', '2020-08-19 15:50:00', 0);
+INSERT INTO `fund` VALUES (39, '全国社保基金四零三组合', '', '', 0, 3, '2020-08-19 15:50:36', '2020-08-19 15:50:36', 0);
+INSERT INTO `fund` VALUES (40, '全国社保基金四一二组合', '', '', 0, 3, '2020-08-19 15:54:45', '2020-08-19 15:54:45', 0);
+INSERT INTO `fund` VALUES (41, '大成基金管理有限公司-社保基金17011组合', '', '', 0, 3, '2020-08-19 15:56:41', '2020-08-19 15:56:41', 0);
+INSERT INTO `fund` VALUES (42, '大成基金管理有限公司-社保基金1101组合', '', '', 0, 3, '2020-08-19 15:56:55', '2020-08-19 15:56:55', 0);
+INSERT INTO `fund` VALUES (43, '全国社保基金四零一组合', '', '', 0, 3, '2020-08-19 16:19:23', '2020-08-19 16:19:23', 0);
+INSERT INTO `fund` VALUES (44, '艾华集团', '', '', 0, 3, '2020-08-19 16:41:23', '2020-08-19 16:41:44', 1);
 
 -- ----------------------------
 -- Table structure for fund_stock
@@ -222,13 +272,31 @@ CREATE TABLE `fund_stock`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `fund_id` int(10) NULL DEFAULT 0,
   `stock_id` int(10) NULL DEFAULT 0,
-  `amount` bigint(20) NULL DEFAULT 0 COMMENT '总份额',
-  `position_cost` decimal(10, 2) NULL DEFAULT 0.00 COMMENT '成本',
+  `amount` decimal(20, 4) NULL DEFAULT 0.0000 COMMENT '持股市值',
+  `position_cost` decimal(20, 4) NULL DEFAULT 0.0000 COMMENT '成本',
+  `stock_num` decimal(20, 4) NULL DEFAULT 0.0000 COMMENT '持股总数',
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '删除标记',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of fund_stock
+-- ----------------------------
+INSERT INTO `fund_stock` VALUES (1, 1, 1, 47700.0000, 17.6667, 2700.0000, '2020-08-23 13:28:44', '2020-08-23 13:28:44', 0);
+INSERT INTO `fund_stock` VALUES (3, 2, 1, 105800.0000, 17.6760, 5985.5100, '2020-08-23 13:54:05', '2020-08-23 13:54:05', 0);
+INSERT INTO `fund_stock` VALUES (4, 21, 1, 103200.0000, 17.6748, 5838.8100, '2020-08-23 13:55:03', '2020-08-23 13:55:03', 0);
+INSERT INTO `fund_stock` VALUES (5, 3, 2, 78400.0000, 46.1190, 1699.9500, '2020-08-23 13:56:44', '2020-08-23 13:56:44', 0);
+INSERT INTO `fund_stock` VALUES (6, 4, 2, 61100.0000, 46.1240, 1324.6900, '2020-08-23 13:57:56', '2020-08-23 13:57:56', 0);
+INSERT INTO `fund_stock` VALUES (7, 5, 2, 41600.0000, 46.1197, 902.0000, '2020-08-23 13:58:27', '2020-08-23 13:58:27', 0);
+INSERT INTO `fund_stock` VALUES (8, 6, 2, 63600.0000, 46.0870, 1380.0000, '2020-08-23 14:04:37', '2020-08-23 14:04:37', 0);
+INSERT INTO `fund_stock` VALUES (9, 7, 2, 92300.0000, 46.1140, 2001.5600, '2020-08-23 14:05:21', '2020-08-23 14:06:25', 0);
+INSERT INTO `fund_stock` VALUES (10, 8, 2, 73800.0000, 46.0648, 1602.0900, '2020-08-23 14:06:49', '2020-08-23 14:06:49', 0);
+INSERT INTO `fund_stock` VALUES (11, 37, 51, 285200.0000, 435.3135, 655.1600, '2020-08-23 14:08:47', '2020-08-23 14:08:47', 0);
+INSERT INTO `fund_stock` VALUES (12, 5, 51, 122700.0000, 435.1990, 281.9400, '2020-08-23 14:11:15', '2020-08-23 14:11:15', 0);
+INSERT INTO `fund_stock` VALUES (13, 35, 51, 186200.0000, 435.2196, 427.8300, '2020-08-23 14:49:07', '2020-08-23 15:02:09', 0);
+INSERT INTO `fund_stock` VALUES (14, 8, 51, 247600.0000, 435.2259, 568.9000, '2020-08-23 15:03:42', '2020-08-23 15:03:42', 0);
 
 -- ----------------------------
 -- Table structure for menu
@@ -245,7 +313,7 @@ CREATE TABLE `menu`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 49 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menu
@@ -261,8 +329,8 @@ INSERT INTO `menu` VALUES (16, 14, 4, '修改密码', 'fa-transgender-alt', '/ad
 INSERT INTO `menu` VALUES (17, 0, 20, '用户', 'fa-users', '', 1, '2019-03-07 16:44:30', '2020-06-18 14:18:28');
 INSERT INTO `menu` VALUES (19, 17, 22, '管理员', 'fa-user-secret', '/admin/admins', 1, '2019-03-07 16:46:07', '2020-06-18 14:18:19');
 INSERT INTO `menu` VALUES (20, 11, 27, '菜单管理', 'fa-align-justify', '/admin/menu', 0, '2019-03-07 17:40:35', '2019-04-15 17:24:09');
-INSERT INTO `menu` VALUES (21, 11, 28, '角色管理', 'fa-venus-double', '/admin/roles', 1, '2019-03-07 17:41:31', '2019-04-15 17:24:09');
-INSERT INTO `menu` VALUES (22, 11, 29, '权限管理', 'fa-ban', '/admin/permissions', 1, '2019-03-07 17:42:49', '2020-06-18 14:32:34');
+INSERT INTO `menu` VALUES (21, 11, 28, '角色管理', 'fa-venus-double', '/admin/roles', 0, '2019-03-07 17:41:31', '2020-08-18 17:28:37');
+INSERT INTO `menu` VALUES (22, 11, 29, '权限管理', 'fa-ban', '/admin/permissions', 0, '2019-03-07 17:42:49', '2020-08-18 17:28:51');
 INSERT INTO `menu` VALUES (24, 23, 6, '内容分类', 'fa-certificate', '/admin/category', 1, '2019-03-13 11:07:49', '2020-06-17 16:23:09');
 INSERT INTO `menu` VALUES (25, 23, 7, '内容管理', 'fa-newspaper-o', '/admin/news', 1, '2019-03-13 11:08:57', '2020-06-17 16:23:23');
 INSERT INTO `menu` VALUES (26, 23, 8, '广告横幅', 'fa-tv', '/admin/ads', 1, '2019-03-14 10:59:42', '2020-06-23 10:28:31');
@@ -276,6 +344,13 @@ INSERT INTO `menu` VALUES (38, 37, 25, '优惠活动', 'fa-adn', '/admin/activit
 INSERT INTO `menu` VALUES (41, 40, 19, '订单管理', 'fa-cutlery', '/admin/orders', 0, '2019-04-15 15:03:15', '2019-04-15 17:24:09');
 INSERT INTO `menu` VALUES (44, 43, 999, '订单一览', 'fa-bars', '/admin/takeorder', 6, '2020-06-18 14:35:50', '2020-06-18 14:35:50');
 INSERT INTO `menu` VALUES (48, 47, 999, '监播一览', 'fa-bars', '/admin/jianbo', 7, '2020-07-15 16:14:13', '2020-07-15 16:14:13');
+INSERT INTO `menu` VALUES (49, 0, 999, '基金管理', 'fa-align-left', '', 1, '2020-08-18 17:33:31', '2020-08-18 18:01:27');
+INSERT INTO `menu` VALUES (50, 0, 999, '股票管理', 'fa-bar-chart', '', 1, '2020-08-18 17:42:27', '2020-08-18 18:02:11');
+INSERT INTO `menu` VALUES (51, 0, 999, '统计分析', 'fa-bars', '', 1, '2020-08-18 17:52:20', '2020-08-19 14:59:45');
+INSERT INTO `menu` VALUES (52, 49, 999, '基金列表', 'fa-bars', '/admin/fund', 1, '2020-08-18 18:01:18', '2020-08-18 18:01:18');
+INSERT INTO `menu` VALUES (53, 50, 999, '股票列表', 'fa-bars', '/admin/stock', 1, '2020-08-18 18:29:53', '2020-08-18 19:01:34');
+INSERT INTO `menu` VALUES (54, 51, 999, '基金持股列表', 'fa-bars', '/admin/analysis', 1, '2020-08-19 15:00:06', '2020-08-19 15:00:06');
+INSERT INTO `menu` VALUES (55, 51, 999, '股票统计列表', 'fa-bars', '/admin/analysis/stock', 1, '2020-08-23 15:17:12', '2020-08-23 15:17:12');
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -333,7 +408,6 @@ INSERT INTO `role_menu` VALUES (1, 5, '2019-03-07 16:32:49', '2019-03-07 16:32:4
 INSERT INTO `role_menu` VALUES (1, 6, '2019-03-07 16:33:33', '2019-03-07 16:33:33');
 INSERT INTO `role_menu` VALUES (1, 11, '2019-03-07 16:34:13', '2019-03-07 16:34:13');
 INSERT INTO `role_menu` VALUES (1, 20, '2019-03-07 17:40:35', '2019-03-07 17:40:35');
-INSERT INTO `role_menu` VALUES (1, 21, '2019-03-07 17:41:31', '2019-03-07 17:41:31');
 INSERT INTO `role_menu` VALUES (1, 28, '2019-04-08 10:53:45', '2019-04-08 10:53:45');
 INSERT INTO `role_menu` VALUES (1, 30, '2019-04-08 12:39:48', '2019-04-08 12:39:48');
 INSERT INTO `role_menu` VALUES (1, 31, '2019-04-08 15:04:05', '2019-04-08 15:04:05');
@@ -354,7 +428,6 @@ INSERT INTO `role_menu` VALUES (1, 24, '2020-06-17 16:23:00', '2020-06-17 16:23:
 INSERT INTO `role_menu` VALUES (1, 25, '2020-06-17 16:23:23', '2020-06-17 16:23:23');
 INSERT INTO `role_menu` VALUES (1, 23, '2020-06-17 16:25:43', '2020-06-17 16:25:43');
 INSERT INTO `role_menu` VALUES (1, 17, '2020-06-18 14:18:28', '2020-06-18 14:18:28');
-INSERT INTO `role_menu` VALUES (1, 22, '2020-06-18 14:32:34', '2020-06-18 14:32:34');
 INSERT INTO `role_menu` VALUES (2, 43, '2020-06-18 14:33:12', '2020-06-18 14:33:12');
 INSERT INTO `role_menu` VALUES (2, 44, '2020-06-18 14:35:50', '2020-06-18 14:35:50');
 INSERT INTO `role_menu` VALUES (1, 29, '2020-06-18 14:36:48', '2020-06-18 14:36:48');
@@ -366,6 +439,12 @@ INSERT INTO `role_menu` VALUES (4, 47, '2020-07-15 16:12:33', '2020-07-15 16:12:
 INSERT INTO `role_menu` VALUES (1, 48, '2020-07-15 16:14:13', '2020-07-15 16:14:13');
 INSERT INTO `role_menu` VALUES (4, 48, '2020-07-15 16:14:13', '2020-07-15 16:14:13');
 INSERT INTO `role_menu` VALUES (1, 49, '2020-07-28 16:05:15', '2020-07-28 16:05:15');
+INSERT INTO `role_menu` VALUES (1, 50, '2020-08-18 17:42:27', '2020-08-18 17:42:27');
+INSERT INTO `role_menu` VALUES (1, 51, '2020-08-18 17:52:20', '2020-08-18 17:52:20');
+INSERT INTO `role_menu` VALUES (1, 52, '2020-08-18 18:01:18', '2020-08-18 18:01:18');
+INSERT INTO `role_menu` VALUES (1, 53, '2020-08-18 18:29:53', '2020-08-18 18:29:53');
+INSERT INTO `role_menu` VALUES (1, 54, '2020-08-19 15:00:07', '2020-08-19 15:00:07');
+INSERT INTO `role_menu` VALUES (1, 55, '2020-08-23 15:17:12', '2020-08-23 15:17:12');
 
 -- ----------------------------
 -- Table structure for role_permissions
@@ -488,12 +567,66 @@ CREATE TABLE `stock`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `code` varchar(155) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `desc` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '描述',
-  `sort` int(11) NULL DEFAULT 99 COMMENT '排序号',
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '删除标记',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 52 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of stock
+-- ----------------------------
+INSERT INTO `stock` VALUES (1, '华鲁恒升', '600426', '', '2020-08-19 15:02:48', '2020-08-19 15:02:48', 0);
+INSERT INTO `stock` VALUES (2, '双汇发展', '000895', '', '2020-08-19 16:25:08', '2020-08-19 16:25:08', 0);
+INSERT INTO `stock` VALUES (3, '恒顺醋业', '600305', '', '2020-08-19 16:25:32', '2020-08-19 16:25:32', 0);
+INSERT INTO `stock` VALUES (4, '亿联网络', '300626', '', '2020-08-19 16:25:53', '2020-08-19 16:25:53', 0);
+INSERT INTO `stock` VALUES (5, '晶澳科技', '002459', '', '2020-08-19 16:26:18', '2020-08-19 16:26:18', 0);
+INSERT INTO `stock` VALUES (6, '天虹股份', '002419', '', '2020-08-19 16:30:10', '2020-08-19 16:30:10', 0);
+INSERT INTO `stock` VALUES (7, '好想你', '002582', '', '2020-08-19 16:30:24', '2020-08-19 16:30:24', 0);
+INSERT INTO `stock` VALUES (8, '利尔化学', '002258', '', '2020-08-19 16:31:07', '2020-08-19 16:31:07', 0);
+INSERT INTO `stock` VALUES (9, '中信特钢', '000708', '', '2020-08-19 16:31:24', '2020-08-19 16:31:24', 0);
+INSERT INTO `stock` VALUES (10, '旗滨集团', '601636', '', '2020-08-19 16:31:39', '2020-08-19 16:31:39', 0);
+INSERT INTO `stock` VALUES (11, '艾华集团', '603989', '', '2020-08-19 16:42:05', '2020-08-19 16:42:05', 0);
+INSERT INTO `stock` VALUES (12, '中科创达', '300496', '', '2020-08-19 16:42:20', '2020-08-19 16:42:20', 0);
+INSERT INTO `stock` VALUES (13, '光威复材', '300699', '', '2020-08-19 16:43:35', '2020-08-19 16:43:35', 0);
+INSERT INTO `stock` VALUES (14, '再升科技', '603601', '', '2020-08-19 16:43:52', '2020-08-19 16:43:52', 0);
+INSERT INTO `stock` VALUES (15, '宋城演艺', '144', '', '2020-08-19 16:44:05', '2020-08-19 16:44:05', 0);
+INSERT INTO `stock` VALUES (16, '长信科技', '300088', '', '2020-08-19 16:50:28', '2020-08-19 16:50:28', 0);
+INSERT INTO `stock` VALUES (17, '安琪酵母', '600298', '', '2020-08-19 16:53:01', '2020-08-19 16:53:01', 0);
+INSERT INTO `stock` VALUES (18, '当代文体', '600136', '', '2020-08-19 16:53:16', '2020-08-19 16:53:16', 0);
+INSERT INTO `stock` VALUES (19, '中顺洁柔', '002511', '', '2020-08-19 16:53:33', '2020-08-19 16:53:33', 0);
+INSERT INTO `stock` VALUES (20, '晨鸣纸业', '000488', '', '2020-08-19 16:55:06', '2020-08-19 16:55:06', 0);
+INSERT INTO `stock` VALUES (21, '重庆啤酒', '600132', '', '2020-08-19 16:55:24', '2020-08-19 16:55:24', 0);
+INSERT INTO `stock` VALUES (22, '生益科技', '600183', '', '2020-08-19 16:56:58', '2020-08-19 16:56:58', 0);
+INSERT INTO `stock` VALUES (23, '领益智造', '002600', '', '2020-08-19 16:57:10', '2020-08-19 16:57:10', 0);
+INSERT INTO `stock` VALUES (24, '长海股份', '300196', '', '2020-08-19 16:59:11', '2020-08-19 16:59:11', 0);
+INSERT INTO `stock` VALUES (25, '碧水源', '300070', '', '2020-08-19 16:59:24', '2020-08-19 16:59:24', 0);
+INSERT INTO `stock` VALUES (26, '星宇股份', '601799', '', '2020-08-19 16:59:43', '2020-08-19 16:59:43', 0);
+INSERT INTO `stock` VALUES (27, '承德露露', '000848', '', '2020-08-19 17:00:06', '2020-08-19 17:00:06', 0);
+INSERT INTO `stock` VALUES (28, '汤臣倍健', '300146', '', '2020-08-19 17:00:22', '2020-08-19 17:00:22', 0);
+INSERT INTO `stock` VALUES (29, '洽洽食品', '002557', '', '2020-08-19 17:03:57', '2020-08-19 17:03:57', 0);
+INSERT INTO `stock` VALUES (30, '三花智控', '002050', '', '2020-08-19 17:04:10', '2020-08-19 17:04:10', 0);
+INSERT INTO `stock` VALUES (31, '山东药玻', '600529', '', '2020-08-19 17:04:24', '2020-08-19 17:04:24', 0);
+INSERT INTO `stock` VALUES (32, '东方财富', '300059', '', '2020-08-19 17:04:39', '2020-08-19 17:04:39', 0);
+INSERT INTO `stock` VALUES (33, '中国巨石', '600176', '', '2020-08-19 17:04:54', '2020-08-19 17:04:54', 0);
+INSERT INTO `stock` VALUES (34, '蓝思科技', '300433', '', '2020-08-19 17:05:49', '2020-08-19 17:05:49', 0);
+INSERT INTO `stock` VALUES (35, '火炬电子', '603678', '', '2020-08-19 17:06:06', '2020-08-19 17:06:06', 0);
+INSERT INTO `stock` VALUES (36, '千禾味业', '603027', '', '2020-08-19 17:06:24', '2020-08-19 17:06:24', 0);
+INSERT INTO `stock` VALUES (37, '玲珑轮胎', '601966', '', '2020-08-19 17:08:01', '2020-08-19 17:08:01', 0);
+INSERT INTO `stock` VALUES (38, '梦百合', '603313', '', '2020-08-19 17:08:18', '2020-08-19 17:08:18', 0);
+INSERT INTO `stock` VALUES (39, '杭叉集团', '603298', '', '2020-08-19 17:08:31', '2020-08-19 17:08:31', 0);
+INSERT INTO `stock` VALUES (40, '杰克股份', '603337', '', '2020-08-19 17:10:50', '2020-08-19 17:10:50', 0);
+INSERT INTO `stock` VALUES (41, '艾德生物', '300685', '', '2020-08-19 17:11:06', '2020-08-19 17:11:06', 0);
+INSERT INTO `stock` VALUES (42, '健友股份', '603707', '', '2020-08-19 17:11:19', '2020-08-19 17:11:19', 0);
+INSERT INTO `stock` VALUES (43, '璞泰来', '603659', '', '2020-08-19 17:11:37', '2020-08-19 17:11:37', 0);
+INSERT INTO `stock` VALUES (44, '精研科技', '300709', '', '2020-08-19 17:11:50', '2020-08-19 17:11:50', 0);
+INSERT INTO `stock` VALUES (45, '亿嘉和', '603666', '', '2020-08-19 17:12:05', '2020-08-19 17:12:05', 0);
+INSERT INTO `stock` VALUES (46, '宁水集团', '603700', '', '2020-08-19 17:12:16', '2020-08-19 17:12:16', 0);
+INSERT INTO `stock` VALUES (47, '有友食品', '603697', '', '2020-08-19 17:12:29', '2020-08-19 17:12:29', 0);
+INSERT INTO `stock` VALUES (48, '玉禾田', '300815', '', '2020-08-19 17:12:44', '2020-08-19 17:12:44', 0);
+INSERT INTO `stock` VALUES (49, '冀东水泥', '000401', '', '2020-08-19 17:15:10', '2020-08-19 17:15:10', 0);
+INSERT INTO `stock` VALUES (50, '塔牌集团', '002233', '', '2020-08-19 17:15:23', '2020-08-19 17:15:23', 0);
+INSERT INTO `stock` VALUES (51, '长春高新', '000661', '', '2020-08-23 14:07:54', '2020-08-23 14:07:54', 0);
 
 -- ----------------------------
 -- Table structure for stock_statis
@@ -505,11 +638,18 @@ CREATE TABLE `stock_statis`  (
   `hold_num` int(6) NULL DEFAULT 0,
   `amout` bigint(20) NULL DEFAULT 0,
   `position_cost` decimal(10, 2) NULL DEFAULT 0.00,
+  `detail` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0 COMMENT '删除标记',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of stock_statis
+-- ----------------------------
+INSERT INTO `stock_statis` VALUES (1, 1, 5, 0, 0.00, '[\"\\u5168\\u56fd\\u793e\\u4fdd\\u57fa\\u91d1\\u4e00\\u4e00\\u4e03\\u7ec4\\u5408\\uff1a\\u6682\\u65e0\\u6392\\u540d\",\"\\u5168\\u56fd\\u793e\\u4fdd\\u57fa\\u91d1\\u4e00\\u96f6\\u516b\\u7ec4\\u5408:\\u6682\\u65e0\\u6392\\u540d\"]', NULL, NULL, 0);
+INSERT INTO `stock_statis` VALUES (2, 2, 7, 0, 0.00, NULL, NULL, NULL, 0);
 
 -- ----------------------------
 -- Table structure for user_tokens

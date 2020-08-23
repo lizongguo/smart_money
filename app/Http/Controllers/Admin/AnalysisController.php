@@ -106,7 +106,7 @@ class AnalysisController extends BaseController
             $obj->where('stock.name', 'like', '%'.$sh['stock_name'].'%');
         }
         $total = count($obj->get());
-        $data = $obj->offset($offset)->limit($limit)->get()->toArray();
+        $data = $obj->offset($offset)->limit($limit)->orderBy('hold_num', 'desc')->get()->toArray();
         foreach ($data as $k => &$v) {
             $detail = json_decode($v['detail'], true);
             $v['detail_str'] = implode("<br>", $detail);
