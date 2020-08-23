@@ -7,13 +7,13 @@
                 <div class="layui-inline">
                     <label class="layui-form-label">基金名称</label>
                     <div class="layui-input-block">
-                        <input type="text" name="sh[name]" placeholder="请输入" autocomplete="off" class="layui-input">
+                        <input type="text" name="sh[fund_name]" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">股票名称</label>
                     <div class="layui-input-block">
-                        <input type="text" name="sh[name]" placeholder="请输入" autocomplete="off" class="layui-input">
+                        <input type="text" name="sh[stock_name]" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-inline">
@@ -63,10 +63,11 @@
             , cols: [[
                     {type: 'checkbox', fixed: 'left',width:'5%'}
                     , {field: 'id', width: '10%', title: '序号'}
-                    , {field: 'name', width:'35%', title: '基金名称'}
-                    , {field: 'code',width:'10%', title: '基金代码'}
-                    , {field: 'ranking',width:'10%', title: '排名'}
-                    , {field: 'fund_type',width:'15%', title: '类型'}
+                    , {field: 'fund_name', width:'20%', title: '基金名称', sort: true}
+                    , {field: 'stock_name',width:'13%', title: '股票名称', sort: true}
+                    , {field: 'amount',width:'13%', title: '持股市值(万元)'}
+                    , {field: 'stock_num',width:'13%', title: '持股总数(万股)'}
+                    , {field: 'position_cost',width:'13%', title: '持股成本(元)'}
                     , {title: '操作', width: '15%', align: 'center', fixed: 'right', toolbar: '#table-admin-opation'}
                 ]]
             , page: true

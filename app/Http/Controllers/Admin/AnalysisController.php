@@ -11,6 +11,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\FundStock;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Fund;
+use App\Models\Stock;
+
 use DB;
 
 class AnalysisController extends BaseController
@@ -18,6 +21,8 @@ class AnalysisController extends BaseController
     public function __construct(Request $request, FundStock $model) {
         parent::__construct();
         $this->model = $model;
+        view()->share('funds', Fund::select('id', 'name')->where('deleted', 0)->get());
+        view()->share('stocks', Stock::select('id', 'name')->where('deleted', 0)->get());
     }
     
     function items(Request $request) {
@@ -25,10 +30,15 @@ class AnalysisController extends BaseController
         $sh = $request->input('sh', []);
         $page = $request->input('page', 1);
         $offset = ($page-1)*$limit;
-        $obj = $this->model->select('*');
-        $obj->where('deleted', 0);
-        if ($sh['name']) {
-            $obj->where('name', 'like', '%'.$sh['name'].'%');
+        $obj = $this->model->select('fund_stock.*', 'fund.name as fund_name', 'stock.name as stock_name');
+        $obj->join('fund', 'fund.id', 'fund_stock.fund_id');
+        $obj->join('stock', 'stock.id', 'fund_stock.stock_id');
+        $obj->where('fund_stock.deleted', 0);
+        if ($sh['fund_name']) {
+            $obj->where('fund.name', 'like', '%'.$sh['fund_name'].'%');
+        }
+        if ($sh['stock_name']) {
+            $obj->where('stock.name', 'like', '%'.$sh['stock_name'].'%');
         }
         $total = count($obj->get());
         $data = $obj->offset($offset)->limit($limit)->get()->toArray();
@@ -40,39 +50,25 @@ class AnalysisController extends BaseController
         ]);
     }
 
-    protected function validatorItem($data, &$msg) {
-        $valid = [
-            'name' => "required|unique:stock,name,{$data['id']},id",
-            'code' => "required|unique:stock,code,{$data['id']},id",
-        ];
-        $tips = [
-            'name.required' => '股票名称不能为空',
-            'name.unique' => '请勿重复添加',
-            'code.required' => '股票代码不能为空',
-            'code.unique' => '请勿重复添加',
-        ];
-        $validator = \Validator::make($data, $valid, $tips);
-        if ($validator->fails()) {
-            $msg = $validator->errors()->all();
-            return false;
-        }
-        return true;
-    }
-
     function input(Request $request, $id = 0) {
         $data = [];
         $id = (int)$id;
-        if($id > 0 && $item = $this->model->getFoundById($id)) {
+        if($id > 0 && $item = $this->model->getOne($id)) {
             $data = $item;
             $data->id = $id;
         }
         if ($request->isMethod('post')) {
             $data = $request->input('data');
-            //验证字段特殊处理检索字段
-            if (method_exists($this, 'validatorItem') && $this->validatorItem($data, $msg) == false) {
+            if ($data['amount']>0&&$data['stock_num']>0) {
+                $data['position_cost'] = round($data['amount']/$data['stock_num'], 4);
+            }
+            //check data
+            $row = DB::table('fund_stock')->where('deleted', 0)->where('fund_id', $data['fund_id'])->where('stock_id', $data['stock_id'])->where('id', '!=', $data['id'])->first();
+            if ($row) {
                 return response()->json([
-                    'status' => 400,
-                    'msg' => $msg
+                    'status' => 500,
+                    'msg' => '请勿重复添加',
+                    'data' => $data
                 ]);
             }
             $result = $this->model->saveItem($data);

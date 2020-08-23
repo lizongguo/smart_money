@@ -13,38 +13,37 @@
         <input type="hidden" name="data[id]" value="{{$data->id}}" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">基金名称<font style="color: red">*</font></label>
-        <div class="layui-input-inline" style="width: 50%">
-            <input type="text" name="data[name]" value="{{$data->name}}" lay-verify="required" autocomplete="off" class="layui-input" >
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">基金代码</label>
-        <div class="layui-input-inline" style="width: 50%">
-            <input type="text" name="data[code]" maxlength="10" value="{{$data->code}}" autocomplete="off" class="layui-input" >
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">排名</label>
-        <div class="layui-input-inline" style="width: 50%">
-            <input type="text" name="data[ranking]" maxlength="3" value="{{$data->ranking}}" autocomplete="off" class="layui-input" >
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">类型<font style="color: red">*</font></label>
-        <div class="layui-input-inline">
-            <select name="data[type]" lay-verify="required" lay-filter="test" id="seltype"> 
-                <option value="">请选择</option>
-                @foreach(config("code.fund_type") as $k => $v)
-                <option value="{{$k}}" @if($data->type == $k) selected @endif >{{$v}}</option>
+        <label class="layui-form-label" style="width: 120px;">基金<font style="color: red">*</font></label>
+        <div class="layui-input-inline" style="width: 500px;">
+            <select xm-select="fund_id" name="data[fund_id]" xm-select-search xm-select-radio xm-select-direction="down" xm-select-height="150px" xm-select-show-count="5" lay-verify="required">
+                <option value="">请选择基金</option>
+                @foreach($funds as $fund)
+                <option value="{{$fund->id}}" @if($data->fund_id == $fund->id) selected @endif >{{$fund->name}}</option>
                 @endforeach
             </select> 
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">基金简介</label>
-        <div class="layui-input-inline" style="width: 70%">
-            <textarea type="text" maxlength="200" name="data[desc]" style="height: 100px;" placeholder="基金简介" autocomplete="off" class="layui-textarea">{{$data->desc}}</textarea>
+        <label class="layui-form-label" style="width: 120px;">股票<font style="color: red">*</font></label>
+        <div class="layui-input-inline" style="width: 500px;">
+            <select xm-select="stock_id" name="data[stock_id]" xm-select-search xm-select-radio xm-select-direction="down" xm-select-height="150px" xm-select-show-count="5" lay-verify="required">
+                <option value="">请选择股票</option>
+                @foreach($stocks as $stock)
+                <option value="{{$stock->id}}" @if($data->stock_id == $stock->id) selected @endif >{{$stock->name}}</option>
+                @endforeach
+            </select> 
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label" style="width: 120px;">持股市值(万元)</label>
+        <div class="layui-input-inline" style="width: 500px;">
+            <input type="text" name="data[amount]" maxlength="10" value="{{$data->amount}}" autocomplete="off" class="layui-input" lay-verify="number">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label" style="width: 120px;">持股总数(万股)</label>
+        <div class="layui-input-inline" style="width: 500px;">
+            <input type="text" name="data[stock_num]" maxlength="10" value="{{$data->stock_num}}" autocomplete="off" class="layui-input" lay-verify="number">
         </div>
     </div>
     <div class="layui-form-item layui-hide">
