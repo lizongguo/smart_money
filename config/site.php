@@ -1,8 +1,8 @@
 <?php
  return array (
-  'sitename' => '基金查询管理云平台',
+  'sitename' => 'SmartMoney',
   'domain' => '',
-  'title' => '基金查询管理云平台',
+  'title' => 'SmartMoney',
   'keywords' => '',
   'description' => '',
   'copyright' => '',
