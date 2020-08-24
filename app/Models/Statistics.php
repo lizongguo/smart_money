@@ -25,5 +25,4 @@ class Statistics extends BaseModel
             ->toArray();
         return $data;
     }
-    
 }

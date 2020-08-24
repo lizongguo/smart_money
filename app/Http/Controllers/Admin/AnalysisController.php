@@ -94,6 +94,7 @@ class AnalysisController extends BaseController
     }
 
     function stockitems(Request $request) {
+        $this->model->dealStockData();
         $model = new \App\Models\StockStatis();
         $limit = $request->input('limit', 10);
         $sh = $request->input('sh', []);
