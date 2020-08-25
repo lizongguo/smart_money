@@ -100,7 +100,7 @@ class AnalysisController extends BaseController
         $sh = $request->input('sh', []);
         $page = $request->input('page', 1);
         $offset = ($page-1)*$limit;
-        $obj = $model->select('stock_statis.*', 'stock.name as stock_name');
+        $obj = $model->select('stock_statis.*', 'stock.name as stock_name', 'stock.code');
         $obj->join('stock', 'stock.id', 'stock_statis.stock_id');
         $obj->where('stock_statis.deleted', 0);
         if ($sh['stock_name']) {
@@ -111,6 +111,7 @@ class AnalysisController extends BaseController
         foreach ($data as $k => &$v) {
             $detail = json_decode($v['detail'], true);
             $v['detail_str'] = implode("<br>", $detail);
+            $v['stock_name'] .= "(" . $v['code'] .")";
         }
         return response()->json([
             'code' => 0,
