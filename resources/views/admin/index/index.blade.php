@@ -95,9 +95,9 @@
                     @endif
                     @endforeach
                     <li data-name="logout" class="layui-nav-item">
-                        <a href="javascript:;" layadmin-event="logout" lay-tips="退出" lay-direction="2">
+                        <a href="javascript:;" layadmin-event="logout" lay-tips="logout" lay-direction="2">
                             <i class="fa fa-sign-out"></i>
-                            <cite>退出登录</cite>
+                            <cite>Logout</cite>
                         </a>
                     </li>
                 </ul>
