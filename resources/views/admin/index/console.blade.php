@@ -1,7 +1,7 @@
 @extends('layouts.admincontent')
 @section('content')
 <div class="layui-fluid">
-    welcome
+    hello,world!
 </div>
 <script src="{{asset("/layuiadmin/layui/layui.js")}}"></script>
 <script>
