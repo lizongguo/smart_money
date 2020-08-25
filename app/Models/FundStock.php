@@ -39,6 +39,7 @@ class FundStock extends BaseModel
         $szurl = "http://hq.sinajs.cn/list=sz";
         foreach ($format as $k => $v) {
             $stock_code = '';
+            $stock_name = '';
             $tempInsert = [];
             $detailArr = [];
             foreach ($v as $stk => $stv) {
@@ -46,6 +47,7 @@ class FundStock extends BaseModel
                 $position_cost = $stv['position_cost']==0 ? '暂无' : $stv['position_cost'];
                 $detailArr[] = $stv['fund_name'] . " : " . $ranking ." : ". $stv['position_cost'];
                 $stock_code = $stv['code'];
+                $stock_name = $stv['stock_name'];
             }
             $tempInsert = [
                 'stock_id' => $k,
@@ -56,14 +58,14 @@ class FundStock extends BaseModel
             $cotent = file_get_contents($url);
             $getcontent = iconv("gb2312", "utf-8",$cotent);
             $contentArr = explode(',', $getcontent);
-            if (isset($contentArr[3])) {
+            if (isset($contentArr[3])&&$contentArr[3]>0&&strpos($contentArr[0], $stock_name)!==false) {
                 $tempInsert['curent_price'] = $contentArr[3];
             } else {
                 $url = $szurl . $stock_code;
                 $cotent = file_get_contents($url);
                 $getcontent = iconv("gb2312", "utf-8",$cotent);
                 $contentArr = explode(',', $getcontent);
-                if (isset($contentArr[3])) {
+                if (isset($contentArr[3])&&$contentArr[3]>0&&strpos($contentArr[0], $stock_name)!==false) {
                     $tempInsert['curent_price'] = $contentArr[3];
                 }
             }
