@@ -22,7 +22,7 @@
           {{--<a href="forget.html" class="layadmin-user-jump-change layadmin-link" style="margin-top: 7px;">忘记密码？</a>--}}
         </div>
         <div class="layui-form-item">
-          <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit">登录</button>
+          <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit">登录（自动部署测试）</button>
         </div>
         <div class="layui-trans layui-form-item layadmin-user-login-other">
 <!--          <label>社交账号登入</label>
