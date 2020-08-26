@@ -94,6 +94,7 @@ class AnalysisController extends BaseController
     }
 
     function stockitems(Request $request) {
+        set_time_limit(0);
         $this->model->dealStockData();
         $model = new \App\Models\StockStatis();
         $limit = $request->input('limit', 10);
