@@ -1,7 +1,5 @@
 vendor
 .env
-storage
 public/upload
-bootstrap/cache
 .idea
 config/fields.php
