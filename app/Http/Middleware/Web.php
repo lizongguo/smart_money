@@ -18,7 +18,7 @@ class Web
     public function handle($request, Closure $next)
     {
         if (Auth::guard('web')->guest() && !$this->shouldPassThrough($request)) {
-            return redirect()->guest('/login');
+            return redirect()->guest('/admin/login');
         }
         return $next($request);
     }
